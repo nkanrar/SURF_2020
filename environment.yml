@@ -37,7 +37,7 @@ dependencies:
   - anndata
   - seaborn
   - scanpy=1.4.6
-  - fa2=0.3.5
+  - forceatlas2=0.3.5
   - cython
 
 
