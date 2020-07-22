@@ -37,6 +37,7 @@ dependencies:
   - anndata
   - seaborn
   - scanpy=1.4.6
+  - fa2
 
 
 prefix: /Users/niveditakanrar/anaconda3
