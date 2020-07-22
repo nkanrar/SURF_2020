@@ -7,7 +7,6 @@ dependencies:
   - _ipyw_jlab_nb_ext_conf=0.1.0
   - anaconda-client=1.7.2
   - anaconda-navigator=1.9.12
-  - appnope=0.1.0
   - attrs=19.3.0
   - backcall=0.2.0
   - backports=1.0
@@ -78,8 +77,6 @@ dependencies:
   - libcxx=10.0.0
   - libedit=3.1.20191231
   - libffi=3.2.1
-  - libgfortran=3.0.1
-  - libiconv=1.16
   - liblief=0.10.1
   - libllvm9=9.0.1
   - libpng=1.6.37
@@ -146,7 +143,6 @@ dependencies:
   - python-dateutil=2.8.1
   - python-igraph=0.7.1.post7
   - python-libarchive-c=2.9
-  - python.app=2
   - python_abi=3.7
   - pytz=2020.1
   - pyviz_comms=0.7.6
