@@ -38,6 +38,9 @@ dependencies:
   - seaborn
   - scanpy=1.4.6
   - cython
+  - pip
+  - pip:
+    - fa2
 
 
 prefix: /Users/niveditakanrar/anaconda3
