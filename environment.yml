@@ -4,6 +4,7 @@ channels:
   - pypi
   - conda-forge
   - pyviz
+  - pip3
 dependencies:
   - conda
   - python=3.7
