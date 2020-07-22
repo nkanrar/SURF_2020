@@ -31,10 +31,10 @@ dependencies:
   - matplotlib
   - holoviews
   - h5py
-  - bbknn
+  - bbknn=1.3.12
   - anndata
   - seaborn
-  - scanpy 
+  - scanpy=1.4.6
 
 
 prefix: /Users/niveditakanrar/anaconda3
