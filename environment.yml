@@ -5,6 +5,7 @@ channels:
   - conda-forge
   - pyviz
   - bioconda
+  - pip
 
 dependencies:
   - conda
