@@ -70,6 +70,7 @@ dependencies:
   - jupyter_core=4.6.3=py37_0
   - jupyterlab=2.1.5=py_0
   - jupyterlab_server=1.2.0=py_0
+  - jupyter-panel-proxy
   - kiwisolver=1.2.0=py37h04f5b5a_0
   - lcms2=2.11=h92f6f08_0
   - leidenalg=0.7.0=py37h570ac47_2
