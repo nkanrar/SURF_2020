@@ -1,6 +1,9 @@
 name: base
 channels:
   - defaults
+  - pypi
+  - conda-forge
+  - pyviz
 dependencies:
   - conda
   - python=3.7
@@ -23,4 +26,15 @@ dependencies:
   - bokeh
   - leidenalg
   - nodejs
+  - python-igraph
+  - panel
+  - matplotlib
+  - holoviews
+  - h5py
+  - bbknn
+  - anndata
+  - seaborn
+  - scanpy 
+
+
 prefix: /Users/niveditakanrar/anaconda3
