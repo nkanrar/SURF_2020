@@ -16,8 +16,8 @@ dependencies:
   - anaconda-navigator
   - navigator-updater
   - scikit-learn
-  - pandas=1.0.3
-  - scipy=1.4.1
+  - pandas=1.0.5
+  - scipy=1.5.0
   - numba
   - statsmodels
   - pytables
@@ -36,8 +36,9 @@ dependencies:
   - bbknn=1.3.12
   - anndata
   - seaborn
-  - scanpy=1.4.6
+  - scanpy=1.5.1
   - cython
+  - stream
   - pip
   - pip:
     - fa2

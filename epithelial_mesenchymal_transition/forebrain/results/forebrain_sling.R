@@ -1,4 +1,4 @@
-setwd("~/Documents/SURF 2020/RNA_seq_files/epithelial_mesenchymal_transition/forebrain/results")
+setwd("~/Documents/SURF 2020/SURF_2020/SURF_2020/epithelial_mesenchymal_transition/forebrain/results")
 library(slingshot)
 library(scales)
 library(viridis)
@@ -7,6 +7,7 @@ head(df)
 UMAPs <- c("X_umap_1", "X_umap_2")
 UMAP_coords <- df[UMAPs]
 head(UMAP_coords)
+
 cluster_labels = df$leiden
 cluster_labels
 sling_output<-slingshot(UMAP_coords, 
@@ -54,7 +55,7 @@ for (i in nms) {
   plot(UMAP_coords, col = colors, pch = 16, cex = 0.5, main = i)
   
   # This plots the min spanning tree (analogous to PAGA in scanpy)
-  #lines(sling_output, lwd = 1, col = 'black', type = 'lineages')
+  lines(sling_output, lwd = 1, col = 'black', type = 'lineages')
 }
 write.table(pt, 
             file = './pseudotime_trajectories_slingshot.csv', 
@@ -62,3 +63,18 @@ write.table(pt,
             sep=","
 )
 
+
+curve1 <- slingCurves(sling_output)$curve1$s
+curve2 <- slingCurves(sling_output)$curve2$s
+
+write.table(curve1, 
+            file = './curve1.csv', 
+            quote = F, #removes annoying quotes when writing to file,
+            sep=","
+)
+
+write.table(curve2, 
+            file = './curve2.csv', 
+            quote = F, #removes annoying quotes when writing to file,
+            sep=","
+)

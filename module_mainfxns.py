@@ -54,7 +54,7 @@ def get_genes(adata, genes):
             list_genes.append(i)
     return list_genes
 
-def vis_pre_processing(adata, genes_range = (0,10000), counts_range = (0, 400000)):
+def vis_pre_processing(adata, genes_range = (0,10000), counts_range = (0, 400000), title=""):
     '''A histogram of genes/cell and counts/cell, a boxplot of 15 highest
     expressed genes, a scatterplot of genes against counts, finally violin
     plots of genes and total counts. This is to visualize the data before
@@ -81,7 +81,8 @@ def vis_pre_processing(adata, genes_range = (0,10000), counts_range = (0, 400000
                   title = 'Counts vs. Genes', ax=ax[1,1], show=False)
     ax[1,1].set_xlabel('Counts')
     ax[1,1].set_ylabel('Genes')
-    fig.tight_layout()
+    fig.suptitle(title)
+    fig.tight_layout(rect=[0, 0.03, 1, 0.95])
     plt.show()
     return fig
 
@@ -91,7 +92,7 @@ def filter_data(adata, min_counts=2000, min_genes=2000, min_cells=3):
     sc.pp.filter_genes(adata, min_cells=min_cells)
     return adata
 
-def vis_post_processing(adata, genes_range = (0,10000), counts_range = (0, 400000)):
+def vis_post_processing(adata, genes_range = (0,10000), counts_range = (0, 400000),title=""):
     '''Histograms of genes and total counts, and finally a scatter plot
     of genes against counts.
     Input: 
@@ -111,7 +112,8 @@ def vis_post_processing(adata, genes_range = (0,10000), counts_range = (0, 40000
     ax[0,1].set_xlabel('Log Counts per Cell')
     ax[0,1].set_ylabel('Frequency (# of Cells)')
     ax[0,1].set_xscale('log')
-    fig.tight_layout()
+    fig.suptitle(title)
+    fig.tight_layout(rect=[0, 0.03, 1, 0.95])
     sc.pl.scatter(adata, x='n_counts', y='n_genes', size=20,ax=ax[1,0], title='Counts vs. Genes',show=False)
     ax[1,0].set_xlabel('Counts')
     ax[1,0].set_ylabel('Genes')
@@ -502,6 +504,12 @@ def heatmap(adata, pathway_genes, num_clust, name, norm = False,
     cmap = plt.get_cmap('Paired')
     colors = cmap(np.linspace(0, 1, len(labels)))
     lut1 = dict(zip(labels, colors))
+    cols_to_return = []
+    keys_for_colors = list(lut1.keys())
+    keys_for_colors.sort()
+    for k in keys_for_colors:
+        cols_to_return.append(lut1[k])
+    adata.uns[name+'_colors'] = cols_to_return
     row_colors1 = cols.map(lut1)
     g = sns.clustermap(df, metric='cosine', row_cluster=False, cmap='viridis',
                       col_linkage=L, col_colors=row_colors1,figsize=(6,6));
