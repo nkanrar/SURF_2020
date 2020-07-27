@@ -26,7 +26,7 @@ dependencies:
   - holoviews
   - panel
   - bokeh
-  - leidenalg
+  - leidenalg=0.7.0
   - nodejs
   - python-igraph
   - panel
