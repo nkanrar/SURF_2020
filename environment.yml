@@ -37,6 +37,7 @@ dependencies:
   - anndata
   - seaborn
   - scanpy=1.5.1
+  - stream
   - cython
   - pip
   - pip:
